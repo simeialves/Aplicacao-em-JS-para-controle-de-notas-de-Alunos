@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>Boletim JS</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script src="script.js"> </script>
+</head>
+
+<body onload="recuperarLocalStorage(inicial=true)">
+    <h3>Inserir Pontos</h3>
+    <table border="5" align=center>
+        <tr>
+            <th rowspan="3">Aluno</th>
+        </tr>
+        <tr>
+            <th colspan="3">Pontuação</th>
+        </tr>
+        <tr>
+            <th id="colHTML">HTML</th>
+            <th id="colCSS">CSS</th>
+            <th id="colJS">javascript</th>
+        </tr>
+        <tr>
+            <td> <input type="text" id="nomeAluno" name="txtnomeAluno"></td>
+            <td> <input type="number" max="100" min="0" id="notaHTML" name="txtnotaHTML"></td>
+            <td> <input type="number" max="100" min="0" id="notaCSS" name="txtnotaCSS"></td>
+            <td> <input type="number" max="100" min="0" id="notaJS" name="txtnotaJS"></td>
+            </tbody>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="button" class="bt1" value="Adicionar"
+                    onclick="inserirNotas(nomeAluno.value, notaHTML.value, notaCSS.value, notaJS.value)">
+            </td>
+        </tr>
+    </table>
+
+    <h3>Notas</h3>
+    <table id="tbNotas" border="5" align=center>
+        <tr>
+            <th id="colAluno" class="cabecalhoTabela">Aluno</th>
+            <th id="colTotal" class="cabecalhoTabela">Total</th>
+            <th id="colMedia" class="cabecalhoTabela">Média</th>
+            <th id="colResultado" class="cabecalhoTabela">Resultado</th>
+        </tr>
+    </table>
+
+    <div id="botao">
+        <input type="button" class="btn" onclick="salvarLocalStorage()" value="Salvar no Browser">
+        <input type="button" class="btn" onclick="recuperarLocalStorage()" value="Recuperar LocalStorage">
+        <input type="button" class="btn" onclick="limparLocalStorage()" value="Limpar LocalStorage">
+    </div>
+</body>
+
+</html>
